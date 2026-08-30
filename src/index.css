@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #030712;
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom futuristic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.5);
+}
+
+/* Glassmorphic card utility */
+.glass-panel {
+  background: rgba(11, 15, 25, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-interactive {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.12);
+}
+
+.glass-glow-purple {
+  background: rgba(20, 10, 35, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+.glow-cyan {
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.7), 0 0 25px rgba(0, 240, 255, 0.3);
+}
+
+.glow-purple {
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.7), 0 0 25px rgba(168, 85, 247, 0.3);
+}
+
+.glow-box-cyan {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.cyber-border-gradient {
+  border-image: linear-gradient(to right, #00f0ff, #a855f7, #34d399) 1;
+}
+
+/* Subtle scanlines effect */
+.scanlines {
+  position: relative;
+}
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
